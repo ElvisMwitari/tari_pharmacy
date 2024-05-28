@@ -31,6 +31,7 @@ export default function Authenticated({ user, header, children }) {
                         type="password"
                         ref={passRef}
                         value={passCode}
+                        autoComplete={false}
                         onChange={(e) => setPassCode(e.target.value)}
                     />
                     <Button
@@ -39,6 +40,7 @@ export default function Authenticated({ user, header, children }) {
                                 console.log("wrong", pass);
                             } else {
                                 setLock(false);
+                                setPassCode("")
                             }
                         }}
                         variant="contained"
